@@ -1,0 +1,111 @@
+@extends('layouts.templates')
+
+@section('page-title', 'Home')
+
+@section('content-id')
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs d-flex align-items-center">
+	<img src="{{asset('images/blog-header.jpg')}}" alt="bg-blog-jumbotron" class="bg-blog-img">
+  <div class="container position-relative d-flex flex-column align-items-center">
+
+    <h2>Blog</h2>
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li>Blog</li>
+    </ol>
+
+  </div>
+</div>
+
+<section id="blog" class="blog">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row g-5">
+
+      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="row gy-5 posts-list">
+
+          @if (count($posts) > 0)
+            @foreach ($posts as $post)
+              <div class="col-lg-6">
+                <article class="d-flex flex-column">
+
+                  <div class="post-img">
+                    <img src="{{ asset('uploads/' . $post->featured_image) }}" alt="" class="img-fluid">
+                  </div>
+
+                  <h2 class="title">
+                    <a href="{{ route('post', $post->slug) }}">{{ $post->title }}</a>
+                  </h2>
+
+                  <div class="meta-top">
+                    <ul>
+                      <li class="d-flex align-items-center">
+                        <i class="fa-regular fa-user"></i>
+                        <a href="{{ route('post-by-user', $post->user->slug) }}">
+                          {{ $post->user->name }}
+                        </a>
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <i class="fa-regular fa-clock"></i>
+                        <a href="{{ route('post', $post->slug) }}">
+                          <time datetime="{{ $post->created_at }}">
+                            {{ formatDate($post->created_at) }}
+                          </time>
+                        </a>
+                      </li>
+                      <li class="d-flex align-items-center">
+                      <i class="fa-regular fa-comment-dots"></i>
+                        <a href="{{ route('post', $post->slug) }}">
+                          {{ $post->activeCommentsCount > 0 ? $post->activeCommentsCount : 0}} Comments
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  @php
+                    $content = Str::markdown($post->content);
+                  @endphp
+
+                  <div class="content">
+                    <p>
+                      {!! Str::limit(strip_tags($content), 280) !!}
+                    </p>
+                  </div>
+
+                  <div class="read-more mt-auto align-self-end">
+                    <a href="{{ route('post', $post->slug) }}">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+
+                </article>
+              </div>
+            @endforeach
+          @else
+            <p class="text-center">None of article found here.</p>
+          @endif
+
+        </div><!-- End blog posts list -->
+
+        <div class="blog-pagination">
+          <ul class="justify-content-center">
+            @for ($i = 1; $i <= $posts->lastPage(); $i++)
+              <li class="{{ $i === $posts->currentPage() ? 'active' : '' }}">
+                <a href="{{ $posts->url($i) }}">{{ $i }}</a>
+              </li>
+            @endfor
+          </ul>
+        </div>
+        <!-- End blog pagination -->
+      </div>
+
+      @include('partials._sidebar', [
+        'categories' => $categories,
+        'tags' => $tags
+      ])
+
+    </div>
+
+  </div>
+</section>
+@endsection

@@ -1,0 +1,9 @@
+/* .breadcrumbs {
+	background-image: url("images/blog-header.jpg");
+} */
+
+.bg-blog-img {
+	width: 50%;
+	margin-left: 20px;
+	border-radius: 5%;
+}
