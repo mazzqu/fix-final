@@ -35,11 +35,11 @@ class UpdatePostRequest extends FormRequest
 	public function messages(): array
 	{
 		return    [
-			'title.required' => 'Judul tidak boleh kosong!',
-			'content.required' => 'Isi artikel tidak boleh kosong!',
-			'featured_image.required' => 'Harap meng-upload gambar!',
-			'tags.required' => 'Harap memasukkan tag minimal 1!',
-			'allowed_comment.required' => 'Harap pilih salah satu!'
+			'title.required' => 'タイトルが必要です!',
+			'content.required' => '内容が必要です!',
+			'featured_image.required' => '画像をアップしてください!',
+			'tags.required' => 'タグを使ってください!',
+			'allowed_comment.required' => 'この中から一つ選んでください!'
 		];
 	}
 }

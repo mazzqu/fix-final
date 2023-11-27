@@ -67,7 +67,7 @@
 					<a href="#" class="nav-link">
 						<i class="nav-icon fa-solid fa-file-lines"></i>
 						<p>
-							Artikel
+							Article
 							<i class="fa-solid fa-angle-left right"></i>
 							<span class="badge badge-info right">2</span>
 						</p>
@@ -76,13 +76,13 @@
 						<li class="nav-item">
 							<a href="{{ route('artikel.index') }}" class="nav-link {{ request()->routeIs('artikel.index') ? 'active' : '' }}">
 								<i class="far fa-regular fa-circle nav-icon"></i>
-								<p>Semua Artikel</p>
+								<p>Artikels</p>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="{{ route('artikel.create') }}" class="nav-link {{ request()->routeIs('artikel.create') ? 'active' : '' }}">
 								<i class="far fa-regular fa-circle nav-icon"></i>
-								<p>Buat Artikel</p>
+								<p>Create article</p>
 							</a>
 						</li>
 					</ul>
@@ -90,14 +90,14 @@
 				<li class="nav-item">
 					<a href="{{ route('komentar.index') }}" class="nav-link {{ request()->routeIs('komentar.index') ? 'active' : '' }}">
 						<i class="nav-icon fa-solid fa-comments"></i>
-						<p>Komentar</p>
+						<p>Give comment</p>
 					</a>
 				</li>
 				@if (Auth::user()->role == 'admin')
 					<li class="nav-item">
 						<a href="{{ route('kategori.index') }}" class="nav-link {{ request()->routeIs('kategori.index') ? 'active' : '' }}">
 						<i class="nav-icon fa-solid fa-tags"></i>
-							<p>Kategori</p>
+							<p>Category</p>
 						</a>
 					</li>
 					<li class="nav-item">

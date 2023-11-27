@@ -8,7 +8,7 @@
 <div class="breadcrumbs d-flex align-items-center" style="background-image: url({{ asset('images/blog-header.jpg') }});">
   <div class="container position-relative d-flex flex-column align-items-center">
 
-    <h2>Detail Artikel</h2>
+    <h2>Article</h2>
     <ol>
       <li><a href="{{ route('home') }}">Home</a></li>
       <li>{{ $post->title }}</li>
@@ -77,7 +77,7 @@
                 @endforeach
               @else
                 <li>
-                  <a href="javascript:void(0)">Belum ada tag.</a>
+                  <a href="javascript:void(0)">タグが付けてないです.</a>
                 </li>
               @endif
             </ul>
@@ -114,8 +114,8 @@
 
           <div class="reply-form">
 
-            <h4>Leave a Reply</h4>
-            <p>Your email address will not be published. Required fields are marked * </p>
+            <h4>返答欄</h4>
+            <p>あなたのメールは安全性を考えてほかのユーザが見られないよう、保管されました。 * </p>
             <form action="{{ route('store-comment', $post->slug) }}#comment-section" method="POST" id="comment-section">
               @method('POST')
               @csrf
@@ -159,7 +159,7 @@
         <div class="sidebar ps-lg-4">
 
           <div class="sidebar-item categories">
-            <h3 class="sidebar-title">Categories</h3>
+            <h3 class="sidebar-title">カテゴリー</h3>
             <ul class="mt-3">
               @foreach ($categories as $category)
                 <li>
@@ -175,7 +175,7 @@
           </div><!-- End sidebar categories-->
 
           <div class="sidebar-item recent-posts">
-            <h3 class="sidebar-title">Related Posts</h3>
+            <h3 class="sidebar-title">関係あるもの</h3>
 
             <div class="mt-3">
 

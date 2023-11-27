@@ -16,9 +16,9 @@
 <div class="breadcrumbs d-flex align-items-center" style="background-image: url({{ asset('images/blog-header.jpg') }});">
   <div class="container position-relative d-flex flex-column align-items-center">
 
-    <h2>Preview Artikel</h2>
+    <h2>Preview article</h2>
     <ol>
-      <li><a href="{{ route('artikel.index') }}">List Artikel</a></li>
+      <li><a href="{{ route('artikel.index') }}">リスト</a></li>
       <li>{{ $post->title }}</li>
     </ol>
 
@@ -96,7 +96,7 @@
                   <h5><a href="javascript:void(0)">John Doe</a></h5>
                   <time datetime="2020-01-01">17 Sep, 2023</time>
                   <p>
-                    Preview komentar
+                    Preview comments
                   </p>
                 </div>
               </div>

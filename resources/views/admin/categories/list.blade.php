@@ -6,12 +6,12 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1>Semua Kategori</h1>
+				<h1>カテゴリーリスト</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">Semua Kategori</li>
+					<li class="breadcrumb-item active">カテゴリー</li>
 				</ol>
 			</div>
 		</div>
@@ -25,7 +25,7 @@
 		<div class="row">
 			<div class="container-fluid text-right" style="margin-bottom: 16px;">
         <a class="btn btn-success" href="{{ route('kategori.create') }} ">
-          Buat Kategori Baru
+          新しいカテゴリーを作成
         </a>
       </div>
 			<div class="col-md-12">
@@ -37,10 +37,10 @@
               <thead>
                 <tr>
 									<th>#</th>
-									<th>Nama Kategori</th>
-									<th>Icon</th>
-									<th>Total Artikel</th>
-									<th>Aksi</th>
+									<th>カテゴリー名</th>
+									<th>アイコン</th>
+									<th>ブログの数</th>
+									<th>アクション</th>
 								</tr>
               </thead>
               <tbody>
@@ -59,19 +59,19 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Delete Category</h4>
+            <h4 class="modal-title">カテゴリーを削除</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>Are you sure want to delete this category?</p>
+            <p>このカテゴリーを消してもよろしですか？</p>
           </div>
           <div class="modal-footer justify-content-center">
 						<form action="{{ url('admin/kategori/') }}" id="data-delete-form" method="POST">
 							@method('DELETE')
 							@csrf
-              <button type="submit" class="btn btn-danger">Hapus</button>
+              <button type="submit" class="btn btn-danger">削除</button>
 						</form>
           </div>
         </div>
@@ -89,7 +89,8 @@
 		var table = $('#list-table').DataTable({
 			processing: true,
 			serverSide: true,
-			ajax: '{!! route('kategori.index') !!}',
+			// edit from ' to "
+			ajax: "{!! route('kategori.index') !!}",
 			columns: [
 				{
 					data: null,

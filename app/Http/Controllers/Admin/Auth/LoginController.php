@@ -24,13 +24,15 @@ class LoginController extends Controller
 				'email' => 'required|email|unique:users,email',
 				'password' => 'required|min:5'
 			],
+			// Edit these language to english to japanese
+			// このものはログインと登録画面のエラーと成功メッセージ等。
 			[
-				'name.required' => 'Harap mengisi nama!',
-				'name.unique' => 'Nama sudah digunakan. Coba nama lain.',
-				'email.required' => 'Harap mengisi email!',
-				'email.unique' => 'Email sudah digunakan. Coba email lain.',
-				'password.required' => 'Harap mengisi password!',
-				'password.min' => 'Password minimal 5 karakter!',
+				'name.required' => '名前欄を入力してください !',
+				'name.unique' => 'このユーザーネムすでに取られたので、別のものを使ってください',
+				'email.required' => 'Email は入力してください!',
+				'email.unique' => 'このメールアドレスすでに取られたので、別のものを使ってください',
+				'password.required' => 'Password は必要です!!',
+				'password.min' => 'Password は5桁以上入力してください!!',
 			]
 		);
 
@@ -41,7 +43,7 @@ class LoginController extends Controller
 
 		User::create($data);
 
-		return to_route('login')->with('success', 'Berhasil membuat akun');
+		return to_route('login')->with('success', 'Account has created');
 	}
 
 	public function login(Request $request)

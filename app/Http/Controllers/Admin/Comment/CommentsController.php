@@ -101,7 +101,7 @@ class CommentsController extends Controller
 
 		$comment->save();
 
-		return to_route('komentar.index')->with('info', 'Komentar berhasil diperbarui!');
+		return to_route('komentar.index')->with('info', 'コメントの変更は成功しました!');
 	}
 
 	/**
@@ -113,6 +113,6 @@ class CommentsController extends Controller
 
 		$comment->delete();
 
-		return to_route('komentar.index')->with('danger', 'Komentar berhasil dihapus!');
+		return to_route('komentar.index')->with('danger', 'コメントを消しました!');
 	}
 }

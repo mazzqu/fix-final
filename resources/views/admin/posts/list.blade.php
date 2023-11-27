@@ -5,12 +5,12 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1>Semua Artikel</h1>
+				<h1>記事のリスト</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">Semua Artikel</li>
+					<li class="breadcrumb-item active">記事</li>
 				</ol>
 			</div>
 		</div>
@@ -22,7 +22,7 @@
 		<div class="row">
       <div class="container-fluid text-right" style="margin-bottom: 16px;">
         <a class="btn btn-success" href="{{ route('artikel.create') }} ">
-          Buat Artikel
+          記事を作る
         </a>
       </div>
 			<div class="col-md-12">
@@ -33,13 +33,13 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Judul Artikel</th>
-                  <th>Penulis</th>
-                  <th>Kategori</th>
-                  <th>Tags</th>
-                  <th>Jumlah Komentar</th>
-                  <th>Status</th>
-                  <th>Aksi</th>
+                  <th>タイトル</th>
+                  <th>投稿者</th>
+                  <th>カテゴリー</th>
+                  <th>タグ</th>
+                  <th>コメントの数</th>
+                  <th>ステータス</th>
+                  <th>アクション</th>
                 </tr>
               </thead>
               <tbody>
@@ -53,17 +53,17 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Hapus Artikel</h4>
+            <h4 class="modal-title">記事を削除</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>Apa anda yakin ingin menghapus artikel ini?</p>
+            <p>この記事を消してもよろしですか?</p>
           </div>
           <div class="modal-footer justify-content-center">
             {{ Form::open(['url'=>url('admin/artikel/'),'method'=>'delete',"id"=>"data-delete-form"]) }}
-              <button type="submit" class="btn btn-danger">Hapus</button>
+              <button type="submit" class="btn btn-danger">削除</button>
             {{ Form::close() }}
           </div>
         </div>
@@ -79,7 +79,8 @@
       var table = $('#list-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: '{!! route('artikel.index') !!}',
+				// edit from ' to "
+        ajax: "{!! route('artikel.index') !!}",
         columns: [
           {
             data: null,

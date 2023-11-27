@@ -2,7 +2,7 @@
 
   <div class="sidebar ps-lg-4">
     <div class="sidebar-item search-form">
-      <h3 class="sidebar-title">Search</h3>
+      <h3 class="sidebar-title">検索バー</h3>
       <form action="{{ route('search') }}" class="mt-3" method="GET" id="search-form">
         <input type="text" name="query" placeholder="Search article here ...">
         <button type="submit" onclick="submitSearchForm()">
@@ -13,7 +13,7 @@
     <!-- End sidebar search formn-->
 
     <div class="sidebar-item categories">
-      <h3 class="sidebar-title">Categories</h3>
+      <h3 class="sidebar-title">カテゴリー</h3>
       <ul class="mt-3">
         @foreach ($categories as $category)
           <li>
@@ -29,7 +29,7 @@
     <!-- End sidebar categories-->
 
     <div class="sidebar-item tags">
-      <h3 class="sidebar-title">Tags</h3>
+      <h3 class="sidebar-title">タグ</h3>
       <ul class="mt-3">
         @if (!$tags->isEmpty())
           @foreach ($tags as $tag)
@@ -42,7 +42,7 @@
             @endif
           @endforeach
         @else
-          <p class="fs-6">Belum ada tag.</p>
+          <p class="fs-6">タグが付けてないです.</p>
         @endif
       </ul>
     </div>

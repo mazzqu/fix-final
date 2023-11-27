@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Sekolah JWP | Log in</title>
+		<title>Login Page</title>
 
 		<!-- Google Font: Source Sans Pro -->
 		<link
@@ -35,10 +35,11 @@
 					</ul>
 				</div>
 				<div class="card-body">
-					<a href="{{ route('home') }}" class="h1 ml-4"><b>Sekolah</b>JeWePe</a>
+					<!-- changes from ml4 to ml5 -->
+					<a href="{{ route('home') }}" class="h1 ml-5"><b>Kantana</b>Blog</a>
 					<div class="tab-content" id="tabs-auth-tabContent">
 						<div class="tab-pane fade show active" id="tabs-login" role="tabpanel" aria-labelledby="tabs-login-tab">
-							<p class="login-box-msg">Sign in to start your session</p>
+							<p class="login-box-msg">いらっしゃいませ</p>
 							@include('includes.admin_v2.alerts')
 							<form id="login_form" action="{{ route('auth') }}" method="POST">
 								{{ csrf_field() }}
@@ -75,7 +76,7 @@
 											<span class="fas fa-lock"></span>
 										</div>
 									</div>
-									
+
 								</div>
 								@if ($errors->has('password'))
 									<span class="help-block">
@@ -98,7 +99,7 @@
 							</form>
 						</div>
 						<div class="tab-pane fade show" id="tabs-register" role="tabpanel" aria-labelledby="tabs-register-tab">
-							<p class="login-box-msg">Registration form</p>
+							<p class="login-box-msg">どうぞこちらへ</p>
 							@include('includes.admin_v2.alerts')
 							<form id="login_form" action="{{ route('register') }}" method="POST">
 								@csrf
@@ -151,7 +152,7 @@
 											<span class="fas fa-lock"></span>
 										</div>
 									</div>
-									
+
 								</div>
 								@if ($errors->has('password'))
 									<span class="help-block">

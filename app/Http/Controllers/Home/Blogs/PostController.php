@@ -131,7 +131,7 @@ class PostController extends Controller
 
 		$comment->save();
 
-		return back()->with('success', 'Komentar berhasil terkirim!');
+		return back()->with('success', 'コメントを送りました!');
 	}
 
 	public function postByUser($slug)

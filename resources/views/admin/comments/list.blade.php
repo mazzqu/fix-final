@@ -6,12 +6,12 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1>Semua Komentar</h1>
+				<h1>コメントリスト</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">Semua Komentar</li>
+					<li class="breadcrumb-item active">コメント</li>
 				</ol>
 			</div>
 		</div>
@@ -33,12 +33,12 @@
               <thead>
                 <tr>
 									<th>#</th>
-									<th>Username</th>
-									<th>Email</th>
-									<th>Artikel</th>
-									<th>Komentar</th>
-									<th>Status</th>
-									<th>Aksi</th>
+									<th>ユーザー名</th>
+									<th>メールアドレス</th>
+									<th>ブログ名</th>
+									<th>コメント</th>
+									<th>ステータス</th>
+									<th>アクション</th>
 								</tr>
               </thead>
               <tbody>
@@ -57,19 +57,19 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Hapus Komentar</h4>
+            <h4 class="modal-title">コメントを削除</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>Apa kamu yakin ingin menghapus komentar ini?</p>
+            <p>このこめんとをけしてもよろしですか?</p>
           </div>
           <div class="modal-footer justify-content-center">
 						<form action="{{ url('admin/komentar/') }}" id="data-delete-form" method="POST">
 							@method('DELETE')
 							@csrf
-              <button type="submit" class="btn btn-danger">Hapus</button>
+              <button type="submit" class="btn btn-danger">削除</button>
 						</form>
           </div>
         </div>
@@ -87,7 +87,8 @@
 		var table = $('#list-table').DataTable({
 			processing: true,
 			serverSide: true,
-			ajax: '{!! route('komentar.index') !!}',
+			// edit to ' from "
+			ajax: "{!! route('komentar.index') !!}",
 			columns: [
 				{
 					data: null,

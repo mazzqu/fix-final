@@ -13,12 +13,12 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1>Edit Artikel</h1>
+				<h1>記事を変更</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">Edit Artikel</li>
+					<li class="breadcrumb-item active">記事</li>
 				</ol>
 			</div>
 		</div>
@@ -41,7 +41,7 @@
 						@csrf
 						<div class="card-body">
 							<div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-								<label class="form-label" for="title">Title*</label>
+								<label class="form-label" for="title">タイトル*</label>
 								<input type="text" class="form-control" name="title" value="{{ $post->title }}" />
 								@if ($errors->has('title'))
 									<span class="help-block text-danger">
@@ -50,7 +50,7 @@
 								@endif
 							</div>
 							<div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
-								<label class="form-label" for="content">Content*</label>
+								<label class="form-label" for="content">コンテンツ*</label>
 								<div id="editor">
 									{!! Str::markdown($post->content) !!}
 								</div>
@@ -62,7 +62,7 @@
 								@endif
 							</div>
 							<div class="form-group">
-								<label>Kategori*</label>
+								<label>カテゴリー*</label>
 								<select class="form-control" style="width: 100%;" name="category_id">
 									<option value="{{ $post->category_id }}">{{ $post->category->name }}</option>
 									@foreach ($categories as $category)
@@ -71,7 +71,7 @@
 								</select>
 							</div>
 							<div class="form-group {{ $errors->has('featured_image') ? ' has-error ':''}}">
-								<label class="form-label" for="feature_image">Image*</label>
+								<label class="form-label" for="feature_image">画像*</label>
 								<div class="input-group">
 									<div class="custom-file">
 										<input class="form-control custom-file-input" type="file" name="feature_image" id="feature_image">
@@ -92,7 +92,7 @@
 							</div>
 
 							<div class="form-group{{ $errors->has('tags') ? ' has-error' : '' }}">
-								<label class="form-label" for="tags">Tags*</label>
+								<label class="form-label" for="tags">タグ*</label>
 								<input name="tags" class="form-control" id="tags" type="text" placeholder="Pisahkan tags dengan tanda koma atau Enter" data-ub-tag-variant="dark" value="{{ $post->tags }}"/>
 								@if ($errors->has('tags'))
 									<span class="help-block text-danger">
@@ -102,31 +102,31 @@
 							</div>
 
 							<div class="form-group clearfix">
-								<label>Buka Komentar : </label>
+								<label>コメントの許可 : </label>
 								<div class="icheck-primary d-inline">
 									<input type="radio" id="radioYes" name="allowed_comment" value="1"{{ $post->allowed_comment == 1 ? 'checked' : '' }}>
-									<label for="radioYes">Ya</label>
+									<label for="radioYes">はい</label>
 								</div>
 								<div class="icheck-danger d-inline">
 									<input type="radio" id="radioNo" name="allowed_comment" value="0" {{ $post->allowed_comment == 0 ? 'checked' : '' }}>
-									<label for="radioNo">Tidak</label>
+									<label for="radioNo">いいえ</label>
 								</div>
 							</div>
 
 							<div class="form-group clearfix">
-								<label>Publish Artikel : </label>
+								<label>記事の投稿 : </label>
 								<div class="icheck-primary d-inline">
 									<input type="radio" id="radioYesActive" name="active" value="1" {{ $post->active == 1 ? 'checked' : '' }}>
-									<label for="radioYesActive">Ya</label>
+									<label for="radioYesActive">はい</label>
 								</div>
 								<div class="icheck-danger d-inline">
 									<input type="radio" id="radioNoActive" name="active" value="0" {{ $post->active == 0 ? 'checked' : '' }}>
-									<label for="radioNoActive">Tidak</label>
+									<label for="radioNoActive">いいえ</label>
 								</div>
 							</div>
 						</div>
 						<!-- /.card-body -->
-						
+
 						<div class="card-footer">
 							<input type="submit" class="btn btn-block btn-primary" value="Save"/>
 						</div>

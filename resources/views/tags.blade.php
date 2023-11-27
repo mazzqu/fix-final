@@ -67,7 +67,7 @@
             </div>
             @endforeach
           @else
-            <p class="text-center">Belum ada artikel.</p>
+            <p class="text-center">何も書かれません.</p>
           @endif
 
         </div><!-- End blog posts list -->

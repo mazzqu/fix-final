@@ -31,9 +31,9 @@ class StoreCommentRequest extends FormRequest
 	public function messages(): array
 	{
 		return [
-			'user_name.required' => 'Nama tidak boleh kosong!',
-			'user_email.required' => 'Email tidak boleh kosong!',
-			'content.required' => 'Komentar tidak boleh kosong!',
+			'user_name.required' => '名前欄が必要です!',
+			'user_email.required' => 'メールアドレスが必要です!',
+			'content.required' => 'コメントを書いてください!',
 		];
 	}
 }

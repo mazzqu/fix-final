@@ -83,7 +83,7 @@ class PostsController extends Controller
 
 		Posts::create($data);
 
-		return to_route('artikel.index')->with('success', 'Artikel berhasil dibuat!');
+		return to_route('artikel.index')->with('success', '記事の作成が成功しました!');
 	}
 
 	/**
@@ -122,7 +122,7 @@ class PostsController extends Controller
 
 		$post->update($data);
 
-		return to_route('artikel.index')->with('info', 'Artikel berhasil diupdate!');
+		return to_route('artikel.index')->with('info', '記事が更新されました!');
 	}
 
 	/**
@@ -133,7 +133,7 @@ class PostsController extends Controller
 		$post = Posts::where('slug', $id)->firstOrFail();
 
 		if ($post->active === 1) {
-			return to_route('artikel.index')->with('warning', 'Artikel sudah di-publish! Ubah status artikel untuk menghapus artikel.');
+			return to_route('artikel.index')->with('warning', '記事の投稿ステータスが変更しますか？');
 		}
 
 		$imagePath = public_path('uploads/' . $post->featured_image);
@@ -144,6 +144,6 @@ class PostsController extends Controller
 
 		$post->delete();
 
-		return to_route('artikel.index')->with('danger', 'Artikel berhasil dihapus!');
+		return to_route('artikel.index')->with('danger', '記事が消しました!');
 	}
 }

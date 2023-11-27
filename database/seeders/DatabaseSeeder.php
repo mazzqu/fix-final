@@ -13,9 +13,11 @@ class DatabaseSeeder extends Seeder
 	 */
 	public function run(): void
 	{
+		// Run-> php artisan db:seed
+		// This command is useful for completely re-building your database -> php artisan migrate:fresh --seed
 		DB::table('users')->insert([
 			'name' => 'admin',
-			'email' => 'admin@google.com',
+			'email' => 'admin@example.com',
 			'role' => 'admin',
 			'password' => Hash::make("12345")
 		]);

@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Edit Category</h1>
+            <h1 class="page-header">カテゴリーを変更</h1>
         </div>
     </div>
     <div class="row">

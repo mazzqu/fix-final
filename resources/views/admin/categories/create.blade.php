@@ -6,12 +6,12 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1>Buat Artikel</h1>
+				<h1>カテゴリーを作る</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">Buat Artikel</li>
+					<li class="breadcrumb-item active">カテゴリー</li>
 				</ol>
 			</div>
 		</div>
@@ -33,7 +33,7 @@
 						@csrf
 						<div class="card-body">
 							<div class="form-group">
-								<label class="form-label" for="name">Nama*</label>
+								<label class="form-label" for="name">名前*</label>
 								<input type="text" class="form-control" name="name" placeholder="Nama kategori" />
 								@if ($errors->has('name'))
 									<span class="help-block text-danger">
@@ -42,7 +42,7 @@
 								@endif
 							</div>
 							<div class="form-group">
-								<label class="form-label" for="name">Icon*</label>
+								<label class="form-label" for="name">アイコン*</label>
 								<input type="text" class="form-control" name="icon" placeholder="Ex: fa-solid fa-microchip" />
 								@if ($errors->has('icon'))
 									<span class="help-block text-danger">

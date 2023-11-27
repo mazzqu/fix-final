@@ -5,12 +5,12 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1>Tambah Pengguna</h1>
+				<h1>ユーザーを追加</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">Tambah Pengguna</li>
+					<li class="breadcrumb-item active">追加</li>
 				</ol>
 			</div>
 		</div>
@@ -26,7 +26,7 @@
             @csrf
 							<div class="card-body">
 								<div class="form-group">
-									<label class="form-label" for="name">Nama*</label>
+									<label class="form-label" for="name">名前*</label>
 									<input type="text" class="form-control" name="name" placeholder="Nama pengguna" />
 									@if ($errors->has('name'))
 										<span class="help-block text-danger">
@@ -35,7 +35,7 @@
 									@endif
 								</div>
 								<div class="form-group">
-									<label class="form-label" for="email">Email*</label>
+									<label class="form-label" for="email">メールアドレス*</label>
 									<input type="email" class="form-control" name="email" placeholder="Email pengguna" />
 									@if ($errors->has('email'))
 										<span class="help-block text-danger">
@@ -44,7 +44,7 @@
 									@endif
 								</div>
 								<div class="form-group">
-									<label class="form-label" for="password">Password*</label>
+									<label class="form-label" for="password">パスワード*</label>
 									<input type="password" class="form-control" name="password" placeholder="Min. 5 karakter" />
 									@if ($errors->has('password'))
 										<span class="help-block text-danger">
@@ -54,7 +54,7 @@
 								</div>
 							</div>
 						<div class="card-footer">
-							<button type="submit" class="btn btn-block btn-primary">Tambah</button>
+							<button type="submit" class="btn btn-block btn-primary">追加</button>
 						</div>
           </form>
 				</div>

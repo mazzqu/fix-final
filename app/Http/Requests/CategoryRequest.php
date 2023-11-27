@@ -33,10 +33,10 @@ class CategoryRequest extends FormRequest
 	public function messages(): array
 	{
 		return [
-			'name.required' => 'Harap masukkan nama kategori!',
-			'icon.required' => 'Harap masukkan icon!',
-			'name.regex' => 'Nama kategori hanya boleh terdiri dari satu kata tanpa spasi & tanpa simbol apapun!',
-			'icon.regex' => 'Harap input icon berdasarkan class pada font awesome!'
+			'name.required' => 'カテゴリー名を入力してください!',
+			'icon.required' => 'アイコンを選んでください!',
+			'name.regex' => 'カテゴリー名はスペースなしで、書いてください',
+			'icon.regex' => 'font-awesome classを書いてください'
 		];
 	}
 }

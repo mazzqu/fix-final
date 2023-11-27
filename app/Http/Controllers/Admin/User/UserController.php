@@ -59,7 +59,7 @@ class UserController extends Controller
 
 		User::create($data);
 
-		return to_route('user.index')->with('success', 'Berhasil membuat pengguna baru!');
+		return to_route('user.index')->with('success', '新しいユーザー追加されました!');
 	}
 
 	/**
@@ -92,9 +92,9 @@ class UserController extends Controller
 				'password' => 'nullable|sometimes|min:5'
 			],
 			[
-				'name.required' => 'Harap mengisi nama!',
-				'email.required' => 'Harap mengisi email!',
-				'password.min' => 'Password minimal 5 karakter!',
+				'name.required' => '名前欄を入力してください!',
+				'email.required' => 'メールアドレスを入力してください!',
+				'password.min' => 'Passwordは5桁以上いれてください!',
 			]
 		);
 
@@ -112,7 +112,7 @@ class UserController extends Controller
 
 		$user->update($data);
 
-		return to_route('user.index')->with('info', 'Berhasil memperbarui data pengguna!');
+		return to_route('user.index')->with('info', 'ユーザーデータを更新しました!');
 	}
 
 	/**
@@ -123,13 +123,13 @@ class UserController extends Controller
 		$data = User::findOrFail($id);
 
 		if ($data->role == 'admin') {
-			return to_route('user.index')->with('warning', 'Tidak dapat menghapus seorang ADMIN!');
+			return to_route('user.index')->with('warning', 'ADMINの削除は不可能です!');
 		}
 
 		dd('lewat if nya');
 
 		$data->delete();
 
-		return to_route('user.index')->with('danger', 'Berhasil menghapus user!');
+		return to_route('user.index')->with('danger', 'ユーザーが消しました!');
 	}
 }

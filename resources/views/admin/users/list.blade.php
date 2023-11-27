@@ -5,12 +5,12 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1>Semua Pengguna</h1>
+				<h1>ユーザーリスト</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">Semua Pengguna</li>
+					<li class="breadcrumb-item active">ユーザー</li>
 				</ol>
 			</div>
 		</div>
@@ -22,7 +22,7 @@
 		<div class="row">
       <div class="container-fluid text-right" style="margin-bottom: 16px;">
         <a class="btn btn-success" href="{{ route('user.create') }}">
-          Buat User
+          ユーザーを作成
         </a>
       </div>
 			<div class="col-md-12">
@@ -33,10 +33,10 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Nama</th>
-                  <th>Email</th>
-                  <th>Artikel Dibuat</th>
-                  <th>Aksi</th>
+                  <th>名前</th>
+                  <th>メールアドレス</th>
+                  <th>ブログの数</th>
+                  <th>アクション</th>
                 </tr>
               </thead>
               <tbody>
@@ -50,19 +50,19 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Hapus User</h4>
+            <h4 class="modal-title">ユーザーを削除</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>Apa anda yakin ingin menghapus user ini serta data artikelnya?</p>
+            <p>これを削除されてもよろしですか?</p>
           </div>
           <div class="modal-footer justify-content-center">
             <form action="{{ url('dashboard/user/') }}" id="data-delete-form" method="POST">
 							@method('DELETE')
 							@csrf
-              <button type="submit" class="btn btn-danger">Hapus</button>
+              <button type="submit" class="btn btn-danger">削除</button>
 						</form>
           </div>
         </div>
@@ -78,7 +78,8 @@
       var table = $('#list-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: '{!! route('user.index') !!}',
+				// edited from ' to "
+        ajax: "{!! route('user.index') !!}",
         columns: [
           {
             data: null,

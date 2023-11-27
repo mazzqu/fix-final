@@ -5,12 +5,12 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1>Edit Komentar</h1>
+				<h1>コメント</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">Edit Komentar</li>
+					<li class="breadcrumb-item active">コメント変更</li>
 				</ol>
 			</div>
 		</div>
@@ -33,35 +33,35 @@
 						@csrf
 						<div class="card-body">
 							<div class="form-group">
-								<label for="user_name" class="form-label">Nama</label>
+								<label for="user_name" class="form-label">名前</label>
 								<input type="text" name="user_name" class="form-control" placeholder="{{ $comment->user_name }}" disabled>
             	</div>
-            
+
 							<div class="form-group">
-								<label for="user_email" class="form-label">Email</label>
+								<label for="user_email" class="form-label">メールアドレス</label>
 								<input type="text" name="user_email" class="form-control" placeholder="{{ $comment->user_email }}" disabled>
 							</div>
 
 							<div class="form-group">
-								<label class="form-label" for="article">Artikel</label><br/>
+								<label class="form-label" for="article">ブログ</label><br/>
 								<a href="{{ route('post', $comment->post->slug) }}" target="_blank">{{$comment->post->title}}</a>
 							</div>
-							
+
 							<div class="form-group">
-								<label for="comment" class="form-label">Komentar</label>
-								
+								<label for="comment" class="form-label">コメント</label>
+
 								<textarea name="content" class="form-control" placeholder="{{ $comment->content }}" disabled></textarea>
 							</div>
-							
+
 							<div class="form-group clearfix">
-								<label>Tampilkan?</label>
+								<label>表示可能?</label>
 								<div class="icheck-primary d-inline">
 									<input type="radio" id="radioYes" name="active" value="1" {{ $comment->active == 1 ? 'checked' : '' }}>
-									<label for="radioYes">Ya</label>
+									<label for="radioYes">はい</label>
 								</div>
 								<div class="icheck-danger d-inline">
 									<input type="radio" id="radioNo" name="active" value="0" {{ $comment->active == 0 ? 'checked' : '' }}>
-									<label for="radioNo">Tidak</label>
+									<label for="radioNo">いいえ</label>
 								</div>
 							</div>
 						</div>
