@@ -15,7 +15,8 @@ return new class extends Migration
 			$table->id();
 			$table->string('title');
 			$table->string('slug')->unique();
-			$table->text('content');
+			// $table->text('content') this only store 64kb -> change to mediumText can store 16mb
+			$table->mediumText('content');
 			$table->string('featured_image');
 			$table->boolean('active')->default(false);
 			$table->boolean('allowed_comment')->default(true);

@@ -9,11 +9,13 @@ function formatDate($date)
 {
   $carbonDate = Carbon::parse($date);
 
-  $carbonDate->setLocale('id');
+  // $carbonDate->setLocale('id');
+  $carbonDate->setLocale('ja');
 
   return $carbonDate->isSameDay(Carbon::now()) ?
     $carbonDate->diffForHumans() :
-    $carbonDate->format('d F Y');
+    // $carbonDate->format('d F Y');
+    $carbonDate->format('Y年m月d日');
 }
 
 

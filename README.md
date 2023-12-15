@@ -1,19 +1,19 @@
-### Installation
+## Installation
 
-1. Clone this repo & update dependencies using composer.
+### 1. Clone this repo & update dependencies using composer.
 
 ```sh
-$ cd sekolah-jewepe
+$ cd (project-folder)
 $ composer update
 ```
 
-2. Copy the .env.example file.
+### 2. Copy the .env.example file.
 
 ```sh
 $ cp .env.example .env
 ```
 
-3. Create a new MySQL database dan set up the new database in .env file.
+### 3. Create a new MySQL database dan set up the new database in .env file.
 
 ```sh
 DB_DATABASE=database_name
@@ -86,7 +86,7 @@ VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 ```
 
-4. Open the seeder file located in `database/seeders/DatabaseSeeder.php` for login credential.
+### 4. Open the seeder file located in `database/seeders/DatabaseSeeder.php` for login credential.
 
 ```php
 DB::table('users')->insert([
@@ -97,20 +97,32 @@ DB::table('users')->insert([
 ]);
 ```
 
-5. Create the application key:
+### 5. Create the application key
 
 ```sh
 $ php artisan key:generate
 ```
 
-6. Run migration & seed:
+### 6. Run migration & seed
 
 ```sh
 $ php artisan migrate --seed
 ```
 
-7. Run the project:
+### 7. Run the project
 
 ```sh
 $ php artisan serve
 ```
+
+## II ENVIROMENT
+
+### LOCAL :
+
+--> OS: Windows 10 <br/>
+--> Code editor : VS Code <br/>
+--> XAMPP: ver(latest) 2023
+
+### DEPLOYMENT ONLY :
+
+    --> SERVER: VPS or Dedicated share
