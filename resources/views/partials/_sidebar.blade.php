@@ -4,7 +4,7 @@
     <div class="sidebar-item search-form">
       <h3 class="sidebar-title">検索バー</h3>
       <form action="{{ route('search') }}" class="mt-3" method="GET" id="search-form">
-        <input type="text" name="query" placeholder="Search article here ...">
+        <input type="text" name="query" placeholder="Search here ...">
         <button type="submit" onclick="submitSearchForm()">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
@@ -42,7 +42,7 @@
             @endif
           @endforeach
         @else
-          <p class="fs-6">タグが付けてないです.</p>
+          <p class="fs-6">タグがないです</p>
         @endif
       </ul>
     </div>

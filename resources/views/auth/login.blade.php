@@ -36,7 +36,7 @@
 				</div>
 				<div class="card-body">
 					<!-- changes from ml4 to ml5 -->
-					<a href="{{ route('home') }}" class="h1 ml-5"><b>Kantana</b>Blog</a>
+					<a href="{{ route('home') }}" class="h1 ml-5"><b>MindLink</b>Blog</a>
 					<div class="tab-content" id="tabs-auth-tabContent">
 						<div class="tab-pane fade show active" id="tabs-login" role="tabpanel" aria-labelledby="tabs-login-tab">
 							<p class="login-box-msg">いらっしゃいませ</p>

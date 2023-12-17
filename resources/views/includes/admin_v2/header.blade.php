@@ -42,7 +42,7 @@
 			class="brand-image img-circle elevation-3"
 			style="opacity: 0.8"
 		/>
-		<span class="brand-text font-weight-light">Kantana Blog</span>
+		<span class="brand-text font-weight-light">MindLink Blog</span>
 	</a>
 
 	<!-- Sidebar -->
@@ -76,13 +76,13 @@
 						<li class="nav-item">
 							<a href="{{ route('artikel.index') }}" class="nav-link {{ request()->routeIs('artikel.index') ? 'active' : '' }}">
 								<i class="far fa-regular fa-circle nav-icon"></i>
-								<p>Artikels</p>
+								<p>リスト</p>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="{{ route('artikel.create') }}" class="nav-link {{ request()->routeIs('artikel.create') ? 'active' : '' }}">
 								<i class="far fa-regular fa-circle nav-icon"></i>
-								<p>Create article</p>
+								<p>作成</p>
 							</a>
 						</li>
 					</ul>
@@ -90,7 +90,7 @@
 				<li class="nav-item">
 					<a href="{{ route('komentar.index') }}" class="nav-link {{ request()->routeIs('komentar.index') ? 'active' : '' }}">
 						<i class="nav-icon fa-solid fa-comments"></i>
-						<p>Give comment</p>
+						<p>コメント</p>
 					</a>
 				</li>
 				@if (Auth::user()->role == 'admin')

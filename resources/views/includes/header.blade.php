@@ -4,7 +4,7 @@
     <a href="{{ route('home') }}" class="logo d-flex align-items-center">
 
 		<!-- Navbar shows -->
-      <h1 class="d-flex align-items-center">Kantana Blog</h1>
+      <h1 class="d-flex align-items-center">MindLink Blog</h1>
     </a>
 
     <i class="mobile-nav-toggle mobile-nav-show fa-solid fa-bars"></i>
@@ -14,13 +14,13 @@
       <ul>
         <li>
           <a href="{{ route('home') }}" @if(Request::segment('1') == '') class="active" @endif>
-            Home
+            ホーム
           </a>
         </li>
         @guest
           <li>
             <a href="{{ route('login') }}">
-              Login
+              ログイン
             </a>
           </li>
         @endguest
@@ -28,7 +28,7 @@
         @auth
           <li>
             <a href="{{ route('dashboard') }}">
-              Dashboard
+						Dashboard
             </a>
           </li>
         @endauth
