@@ -114,41 +114,56 @@
 
           <div class="reply-form">
 
+						<!--When not login these below will not appear  -->
+					@auth
             <h4>返答欄</h4>
             <p>あなたのメールは安全性を考えてほかのユーザが見られないよう、保管されました。 * </p>
             <form action="{{ route('store-comment', $post->slug) }}#comment-section" method="POST" id="comment-section">
-              @method('POST')
-              @csrf
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input name="user_name" type="text" class="form-control" placeholder="Your Name*" {{ $disabledForm }}>
-                  @if ($errors->has('user_name'))
-                    <span class="help-block text-danger">
-                      <p>{{ $errors->first('user_name') }}</p>
-                    </span>
-                  @endif
-                </div>
-                <div class="col-md-6 form-group">
-                  <input name="user_email" type="text" class="form-control" placeholder="Your Email*" {{ $disabledForm }}>
-                  @if ($errors->has('user_email'))
-                    <span class="help-block text-danger">
-                      <p>{{ $errors->first('user_email') }}</p>
-                    </span>
-                  @endif
-                </div>
-              </div>
-              <div class="row">
-                <div class="col form-group">
-                  <textarea name="content" class="form-control" placeholder="Your Comment*" rows="6" {{ $disabledForm }}></textarea>
-                  @if ($errors->has('content'))
-                    <span class="help-block text-danger">
-                      <p>{{ $errors->first('content') }}</p>
-                    </span>
-                  @endif
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary" {{ $disabledForm }}>Post Comment</button>
-            </form>
+								@method('POST')
+								@csrf
+								<!-- Using God method to be invicible -->
+								<div class="row" style="display: none;">
+									<div class="col-md-6 form-group">
+											@if(auth()->check())
+													<input name="user_name" type="text" class="form-control" placeholder="Your Name*" value="{{ auth()->user()->name }}" {{ $disabledForm }}>
+											@else
+													<input name="user_name" type="text" class="form-control" placeholder="Your Name*" {{ $disabledForm }}>
+											@endif
+											@if ($errors->has('user_name'))
+													<span class="help-block text-danger">
+															<p>{{ $errors->first('user_name') }}</p>
+													</span>
+											@endif
+									</div>
+									<div class="col-md-6 form-group">
+											@if(auth()->check())
+													<input name="user_email" type="text" class="form-control" placeholder="Your Email*" value="{{ auth()->user()->email }}" {{ $disabledForm }}>
+											@else
+													<input name="user_email" type="text" class="form-control" placeholder="Your Email*" {{ $disabledForm }}>
+											@endif
+											@if ($errors->has('user_email'))
+													<span class="help-block text-danger">
+															<p>{{ $errors->first('user_email') }}</p>
+													</span>
+											@endif
+									</div>
+							</div>
+
+
+								<div class="row">
+										<div class="col form-group">
+												<textarea name="content" class="form-control" placeholder="Your Comment*" rows="6"></textarea>
+												@if ($errors->has('content'))
+														<span class="help-block text-danger">
+																<p>{{ $errors->first('content') }}</p>
+														</span>
+												@endif
+										</div>
+								</div>
+								<button type="submit" class="btn btn-primary">Post Comment</button>
+							</form>
+							@endauth
+
           </div>
         </div>
         <!-- End blog comments -->

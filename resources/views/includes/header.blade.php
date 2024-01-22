@@ -31,6 +31,15 @@
 						Dashboard
             </a>
           </li>
+					<li>
+						<a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+							Logout
+						</a>
+					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+					<!--  to handle Cross-Site Request Forgery protection. -->
+						@csrf
+					</form>
+   			</li>
         @endauth
       </ul>
     </nav><!-- .navbar -->

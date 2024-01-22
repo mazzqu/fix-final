@@ -10,9 +10,10 @@ return [
 		* The default configurations to be used by the meta generator.
 		*/
 		'defaults'       => [
-			'title'        => 'Sekolah JeWePe: Selalu Relevan', // set false to total remove
+			'title'        => 'Mind Link', // set false to total remove
 			'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-			'description'  => 'Sekolah JeWePe: Sumber berita terkini dan tutorial pendidikan, membantu Anda menjelajahi informasi terbaru dalam dunia pendidikan dan meningkatkan pengalaman belajar dan mengajar.', // set false to total remove
+			// 'description'  => 'Sekolah JeWePe: Sumber berita terkini dan tutorial pendidikan, membantu Anda menjelajahi informasi terbaru dalam dunia pendidikan dan meningkatkan pengalaman belajar dan mengajar.', // set false to total remove
+			'description'  => 'Mind Link: Explore new journey of knowledges', // set false to total remove
 			'separator'    => ' - ',
 			'keywords'     => [],
 			'canonical'    => 'current', // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
@@ -37,8 +38,8 @@ return [
 		* The default configurations to be used by the opengraph generator.
 		*/
 		'defaults' => [
-			'title'       => 'Sekolah JeWePe: Selalu Relevan', // set false to total remove
-			'description' => 'Sekolah JeWePe: Sumber berita terkini dan tutorial pendidikan, membantu Anda menjelajahi informasi terbaru dalam dunia pendidikan dan meningkatkan pengalaman belajar dan mengajar.', // set false to total remove
+			'title'       => 'Mind Link', // set false to total remove
+			'description' => 'Mind Link: Explore new journey of knowledges', // set false to total remove
 			'url'         => null, // Set null for using Url::current(), set false to total remove
 			'type'        => false,
 			'site_name'   => false,
@@ -51,7 +52,7 @@ return [
 		*/
 		'defaults' => [
 			'card'        => 'summary_large_image',
-			'title'				=> 'Sekolah JeWePe: Selalu Relevan',
+			'title'				=> 'Mind Link',
 			//'site'        => '@LuizVinicius73',
 		],
 	],
@@ -60,8 +61,8 @@ return [
 		* The default configurations to be used by the json-ld generator.
 		*/
 		'defaults' => [
-			'title'       => 'Sekolah JeWePe: Selalu Relevan', // set false to total remove
-			'description' => 'Sekolah JeWePe: Sumber berita terkini dan tutorial pendidikan, membantu Anda menjelajahi informasi terbaru dalam dunia pendidikan dan meningkatkan pengalaman belajar dan mengajar.', // set false to total remove
+			'title'       => 'Mind Link', // set false to total remove
+			'description' => 'Mind Link: Explore new journey of knowledges', // set false to total remove
 			'url'         => 'full', // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
 			'type'        => 'WebPage',
 			'images'      => [],

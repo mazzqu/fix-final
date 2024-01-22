@@ -15,7 +15,7 @@ function formatDate($date)
   return $carbonDate->isSameDay(Carbon::now()) ?
     $carbonDate->diffForHumans() :
     // $carbonDate->format('d F Y');
-    $carbonDate->format('Y年m月d日');
+    $carbonDate->format('Y m d');
 }
 
 

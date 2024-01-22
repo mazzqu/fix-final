@@ -31,8 +31,9 @@
               <div class="col-lg-6">
                 <article class="d-flex flex-column">
 
-                  <div class="post-img">
-                    <img src="{{ asset('uploads/' . $post->featured_image) }}" alt="" class="img-fluid">
+								<!-- make picture display looks neat widht 300 & height 400 pixels -->
+                  <div class="post-img" style="width: 300px; height: 400px; overflow: hidden;">
+                    <img src="{{ asset('uploads/' . $post->featured_image) }}" alt="" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
                   </div>
 
                   <h2 class="title">
