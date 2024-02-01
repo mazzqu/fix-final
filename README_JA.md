@@ -1,26 +1,42 @@
-## Installation
+# Installation
 
-### 1. Clone this repo & update dependencies using composer.
+### 1.このレポジトリをクローンすること
 
 ```sh
-$ cd (project-folder)
-$ composer update
+	git clone https://github.com/mazzqu/fix-final.git
 ```
 
-### 2. Copy the .env.example file.
+### 2.環境を設定すること
+
+```sh
+	cd (プロジェクトフォルダ名)
+	composer update
+```
+
+注意：Composer や git などインストールは確認してください。
+
+### 3.データベースを新規ファイルの作り方
+
+XAMPP 使うとき：PHPMYADMIN から入って新しいデータベースを作成する。<br/>
+CLI 使うとき：MYSQL 入ってコマンドで「CREATE DATABASE;」<br/>
+
+データベースの名前は自由に決めてください。このプロジェクトの場合は「<b>mind_link<b/>」。
+
+### 4. Copy the .env.example file.
+
+ターミナルの中でこのコマンドを実行すること。
+意味は今にあるファイル「.env.example」をこのファイルに「.env」コピーすること。
 
 ```sh
 $ cp .env.example .env
 ```
 
-### 3. Create a new MySQL database dan set up the new database in .env file.
-
-.env file
+.env の中では
 
 ```sh
 APP_NAME=Laravel
 APP_ENV=local
-APP_KEY=base64:cmkir3ycTuAONiEP/pza+tfZAWyWXNmJ1sp16ZBPZCU=
+APP_KEY= # key migrateコマンドを実行したら、ここに勝手に入力される。
 APP_DEBUG=true
 APP_URL=http://localhost
 
@@ -31,7 +47,7 @@ LOG_LEVEL=debug
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=laravel_blog
+DB_DATABASE=laravel_blog #ここで注意してください、必ず先ほど作ったデータベース名と同じこと。
 DB_USERNAME=root
 DB_PASSWORD=
 
@@ -77,18 +93,6 @@ VITE_PUSHER_HOST="${PUSHER_HOST}"
 VITE_PUSHER_PORT="${PUSHER_PORT}"
 VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
 VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
-
-```
-
-### 4. Open the seeder file located in `database/seeders/DatabaseSeeder.php` for login credential.
-
-```php
-DB::table('users')->insert([
-	'name' => 'admin', // user name
-	'email' => 'admin@google.com', // user email
-	'role' => 'admin', // role
-	'password' => Hash::make("12345") // password
-]);
 ```
 
 ### 5. Create the application key
@@ -99,6 +103,8 @@ $ php artisan key:generate
 
 ### 6. Run migration & seed
 
+データベースにデータを入れて行くこと。
+
 ```sh
 $ php artisan migrate --seed
 ```
@@ -108,15 +114,3 @@ $ php artisan migrate --seed
 ```sh
 $ php artisan serve
 ```
-
-## II ENVIROMENT
-
-### LOCAL :
-
---> OS: Windows 10 <br/>
---> Code editor : VS Code <br/>
---> XAMPP: ver(latest) 2023
-
-### DEPLOYMENT ONLY :
-
-    --> SERVER: VPS or Dedicated share

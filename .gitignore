@@ -17,7 +17,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-
+.txt
 /public/uploads/
 
 /resources/views/admin/gallery
