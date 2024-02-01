@@ -93,7 +93,7 @@
 
 							<div class="form-group{{ $errors->has('tags') ? ' has-error' : '' }}">
 								<label class="form-label" for="tags">タグ*</label>
-								<input name="tags" class="form-control" id="tags" type="text" placeholder="Pisahkan tags dengan tanda koma atau Enter" data-ub-tag-variant="dark" value="{{ $post->tags }}"/>
+								<input name="tags" class="form-control" id="tags" type="text" placeholder="to separate tag press comma or Enter" data-ub-tag-variant="dark" value="{{ $post->tags }}"/>
 								@if ($errors->has('tags'))
 									<span class="help-block text-danger">
 										<p>{{ $errors->first('tags') }}</p>
